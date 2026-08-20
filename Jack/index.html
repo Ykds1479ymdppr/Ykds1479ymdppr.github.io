@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<script>
+  //data:text/html,<title>Jesus Deblocker</title><iframe src="https://trinket.io/embed/html/506d5cc7c902?outputOnly=true%22%20width=%22100%%22%20height=%22100%%22%20frameborder=%220%22%20marginwidth=%220%22%20marginheight=%220%22%20allowfullscreen%3E%3C/iframe%3E
+  //anura.pro
+  //https://web-os--josephine252525.replit.app/
+  //meow.camera
+  //https://blocked.goguardian.com/x3/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9YWJvdXQlM0FibGFuayZyczuu1YM19SRVBPUlQmc3Q9c2hpZWxkJnY9MSZ4M3JwaT1lOWUyZWYxNy0xNzQ2LTRmMTYtOWY0Yi01OTdlZTgzMWI4MmQ%3D&sum=920cf510
+  //https://blocked.goguardian.com/?ctx=YWZpPTIyMTQ2MDE2JmFwaT0xOTAxNDkmb2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZoYWhhZ2FtZXMuY29tJTJGJnJzPUFETUlOX1NJVEVfRklMVEVSJnN0PXNoaWVsZCZ2PTE%3D&sum=577b26c2
+  //https://blocked.goguardian.com/teacher/block.html?ctx=https://blocked.goguardian.com/teacher/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRnNlYXJjaCUzRnElM0RoYWZkcyUyNnJseiUzRDFDQUpJS1VfZW5VUzEyMTIlMjZvcSUzRGhhZmRzJTI2Z3NfbGNycCUzREVnWmphSEp2YldVeUJnZ0FFRVVZT1RJTENBRVFBQmdLR0FzWWdBUXlDd2dDRUFBWUNoZ0xHSUFFTWdzSUF4QUFHQW9ZQ3hpQUJESUxDQVFRQUJnS0dBc1lnQVF5Q3dnRkVBQVlDaGdMR0lBRU1nc0lCaEFBR0FvWUN4aUFCRElMQ0FjUUFCZ0tHQXNZZ0FReUN3Z0lFQzRZQ2hnTEdJQUVNZ3NJQ1JBdUdBb1lDeGlBQk5JQkJ6VTVObW93YWplb0FnQ3dBZ0ElMjZzb3VyY2VpZCUzRGNocm9tZSUyNmllJTNEVVRGLTglMjZzYWZlJTNEYWN0aXZlJTI2c3N1aSUzRG9uJnJzPVRFQUNIRVJfU0NFTkUmc3Q9c2hpZWxkJnRzYT0xNTEzMzUyMiZ0c2k9MzM1NTc2OCZ2PTE%3D&sum=f31b5792%3D
+  
+  function openBlank(site="") {
+    if (site == ""){
+      var site2 = document.getElementById("siteInput").value.trim();
+      site = site2
+    }
+
+      if (!site) {
+        alert("Please enter a website first.");
+        return;
+      }
+      
+       let raw = String(site);
+    if (
+      !raw.includes(".com") &&
+      !raw.includes(".org") &&
+      !raw.includes(".net") &&
+      !raw.includes(".io") &&
+      !raw.includes(".ninja") &&
+      !raw.includes(".edu") &&
+      !raw.includes(".wtf") &&
+      !raw.includes(".sucks") &&
+      !raw.includes(".pizza") &&
+      !raw.includes(".monster") &&
+      !raw.includes(".icu") &&
+      !raw.includes(".games") &&
+      !raw.includes(".app") &&
+      !raw.includes(".lol") &&
+      !raw.includes(".pro") &&
+      !raw.includes(".camera") &&
+      !raw.includes(".dev")
+      ) {
+    site = "www.google.com/search?igu=1&q=" + encodeURIComponent(raw);
+      }
+    else if (site.includes("https://")) 
+    {
+    site = site.replace(/^https:\/\//, "");
+    };
+      const rawHTML = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Jesus Deblocker</title>
+      <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVHcEwAd3QAeXgAn68Ar7cA0NkAtbkA2N0A6e0A9vYA/v8A//8A3uAA4OAAZ2YAcXEAwMA76f7zAAAAAXRSTlMAQObYZgAAAIpJREFUeNqV0EESgCAMRNEfEqPivH9ZpYg6YpbuvGbyEArw9AsgInb37g0gN8f99gEQv7vUvW8AOfXm1psHwF9fGvXpD0Am1wYwUf8DkJW6FhD1vQNo6uUfADvG7e29fwDu7ZOfvD+A39VwZby/bve/e969pY4IInbX6fN6P+R6e0IwsXsiZp6+9+8EwAUPGgK9bYoNAAAAAElFTkSuQmCC">
+      <style>
+        html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:#fff; }
+        iframe { width:100%; height:100%; border:none; }
+      </style>
+    </head>
+    <body>
+      
+      <!-- 2. Force Render Loop hack: Intercepts the tab lifecycle to shake the cache -->
+      <script>
+        const link = document.querySelector("link[rel*='icon']");
+        // Changing the href slightly at runtime forces Chromium's UI thread to re-read the icon data
+        setTimeout(() => {
+          link.href = link.href + "#force";
+        }, 50);
+      <\/script>
+    </body>
+    </html>
+  `;
+
+  const win = window.open("about:blank", "_blank");
+  win.document.write(rawHTML);
+  const iframe = win.document.createElement("iframe");
+  iframe.src = `https://${site}`;
+  iframe.style="border:0; width:100%; height:100%; frameborder=0; marginwidth=0; marginheight=0;";
+  iframe.allow="cross-origin; fullscreen; storage-access";
+  iframe.credentialless = true;
+  win.document.body.appendChild(iframe);
+  let link = targetDoc.createElement('link');
+  link.rel = 'icon';
+  link.type = 'image/png';
+  link.href = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVHcEwAd3QAeXgAn68Ar7cA0NkAtbkA2N0A6e0A9vYA/v8A//8A3uAA4OAAZ2YAcXEAwMA76f7zAAAAAXRSTlMAQObYZgAAAIpJREFUeNqV0EESgCAMRNEfEqPivH9ZpYg6YpbuvGbyEArw9AsgInb37g0gN8f99gEQv7vUvW8AOfXm1psHwF9fGvXpD0Am1wYwUf8DkJW6FhD1vQNo6uUfADvG7e29fwDu7ZOfvD+A39VwZby/bve/e969pY4IInbX6fN6P+R6e0IwsXsiZp6+9+8EwAUPGgK9bYoNAAAAAElFTkSuQmCC';
+  win.document.head.appendChild(link);
+    }
+</script>
+
+<html lang="en">
+<head>
+  <link rel=stylesheet href="styles.css">
+  <meta charset="UTF-8">
+  <title>Jesus Unblocker</title>
+</head>
+<body>
+  <h1>Welcome to the Jesus Unblocker!</h1><br>
+  <strong>Instructions: <br>
+  1. Click on a site below.<br>
+  2. If you have a site that isn't listed, paste it into the Textbox.<br>
+  3. Keep the extension (ex: .com or .org)<br>
+  4. Click "Open Site" and enjoy! <br> </strong>
+  5. Save this link to use it after this gets blocked: <br>
+  data:text/html,&lt;title>Jesus Deblocker&lt;/title>&lt;iframe src="https://trinket.io/embed/html/506d5cc7c902?outputOnly=true%22%20width=%22100%%22%20height=%22100%%22%20frameborder=%220%22%20marginwidth=%220%22%20marginheight=%220%22%20allowfullscreen%3E%3C/iframe%3E" <br>
+  <em>Bonus. Want to know how it works? I'll leave a link to an explanation once I finish it below.<br></em>
+  <input id="siteInput" type="text" placeholder="Textbox (Enter Site)" style="width:250px;">
+  <button onclick="openBlank()">Open Site</button>
+  <br>
+  proxysite
+  blockaway
+  4everproxy <br>
+  <strong>These are guaranteed to work, and if they don't I will remove them.</strong><br>
+  Sadly, Minecraft got blocked. I will replace this as soon as I find an alternative.<br>
+  <button onclick='openBlank("duck.tinyexams.com")'>duck.tinyexams.com</button> (actually this site has minecraft so you can use this for now)<br>
+  <button onclick='openBlank("hahagames.com")'>hahagames.com</button><br>
+  <button onclick="openBlank('anura.pro')">anura.pro</button><br>
+  <button onclick="openBlank('meow.camera')">meow.camera</button><br>
+  <button onclick='openBlank("beanethiii.github.io/70403")'>beanethiii.github.io/70403</button><br>
+  <button onclick='openBlank("jcw87.github.io")'>jcw87.github.io</button><br>
+  <button onclick='openBlank("thegraycuber.github.io")'>thegraycuber.github.io</button><br>
+  <button onclick='openBlank("geometrydashlitepc.io")'>geometrydashlitepc.io</button><br>
+  <button onclick='openBlank("geometry-games.io")'>geometry-games.io</button><br>
+  <button onclick='openBlank("geometrygames.io")'>geometrygames.io</button><br>
+  <button onclick='openBlank("funclicker.org")'>funclicker.org</button><br>
+  <button onclick='openBlank("ut10-battle.undertale.com")'>ut10-battle.undertale.com</button><br>
+  <button onclick='openBlank("kbhgames.com")'>kbhgames.com</button><br>
+  <button onclick='openBlank("aidn.jp")'>aidn.jp</button><br>
+  <button onclick='openBlank("spu7nix.net/spwn")'>spu7nix.net/spwn</button><br>
+  <button onclick='openBlank("gamenora.com")'>gamenora.com</button><br>
+  <button onclick='openBlank("dashmetry.com")'>dashmetry.com</button><br>
+  <button onclick='openBlank("mathster.com/games/tetris/")'>mathster.com/games/tetris/ (tetris)</button><br>
+  <button onclick='openBlank("geometrydash-lite2.io/")'>geometrydash-lite2.io/</button><br>
+  <button onclick='openBlank("r74n.com")'>r74n.com</button><br>
+  <button onclick='openBlank("gamaverse.com")'>gamaverse.com</button><br>
+  <button onclick='openBlank("oily-diddy-click.base44.app")'>oily-diddy-click.base44.app</button><br>
+  <button onclick='openBlank("huzz-coin-quest.base44.app")'>huzz-coin-quest.base44.app</button><br>
+  <button onclick='openBlank("offline-dino-game.firebaseapp.com")'>offline-dino-game.firebaseapp.com (dino game)</button><br>
+  <button onclick='openBlank("rbeesley.github.io/MicrosoftEdge-SURF/")'>rbeesley.github.io/MicrosoftEdge-SURF/ (surf)</button><br>
+  <button onclick='openBlank("trinket.io/python/fb8b43596e?outputOnly=true&runOption=run")'>trinket.io/python/fb8b43596e?outputOnly=true&runOption=run (Black Jack)</button><br>
+  <button onclick='openBlank("calcsolver.net")'>calcsolver.net</button><br>
+  <strong>From this point on, I am unsure whether these will work. </strong><br>
+<button onclick='openBlank("snokido.com")'>snokido.com</button><br>
+<button onclick='openBlank("zapgames.io")'>zapgames.io</button><br>
+<button onclick='openBlank("brainide.com")'>brainide.com</button><br>
+<button onclick='openBlank("ebugame.com")'>ebugame.com</button><br>
+<button onclick='openBlank("ozogames.com")'>ozogames.com</button><br>
+<button onclick='openBlank("madkidgames.com")'>madkidgames.com</button><br>
+<button onclick='openBlank("jopi.com")'>jopi.com</button><br>
+<button onclick='openBlank("h5games.online")'>h5games.online</button><br>
+<button onclick='openBlank("funhtml5games.com")'>funhtml5games.com</button><br>
+<button onclick='openBlank("retrogames.cc")'>retrogames.cc</button><br>
+<button onclick='openBlank("scratch.mit.edu")'>scratch.mit.edu</button><br>
+<button onclick='openBlank("itch.io")'>itch.io</button><br>
+<button onclick='openBlank("freezeenova.github.io")'>freezeenova.github.io</button><br>
+<button onclick='openBlank("ubg365.github.io")'>ubg365.github.io</button><br>
+<button onclick='openBlank("ubg44.github.io")'>ubg44.github.io</button><br>
+<button onclick='openBlank("3kh0.github.io")'>3kh0.github.io</button><br>
+<button onclick='openBlank("gamedistribution.com")'>gamedistribution.com</button><br>
+<button onclick='openBlank("gamemonetize.com")'>gamemonetize.com</button><br>
+<button onclick='openBlank("html5games.com")'>html5games.com</button><br>
+<button onclick='openBlank("miniplay.com")'>miniplay.com</button><br>
+<button onclick='openBlank("silvergames.com")'>silvergames.com</button><br>
+<button onclick='openBlank("twoplayergames.org")'>twoplayergames.org</button><br>
+<button onclick='openBlank("gameflare.com")'>gameflare.com</button><br>
+<button onclick='openBlank("lagged.com")'>lagged.com</button><br>
+<button onclick='openBlank("plays.org")'>plays.org</button><br>
+<button onclick='openBlank("g55.co")'>g55.co</button><br>
+<button onclick='openBlank("nebezb.com")'>nebezb.com</button><br>
+<button onclick='openBlank("unblockedgamesfreezenova.com")'>unblockedgamesfreezenova.com</button><br>
+<button onclick='openBlank("neocities.org")'>neocities.org</button><br>
+<button onclick='openBlank("glitch.me")'>glitch.me</button><br>
+<button onclick='openBlank("github.io")'>github.io</button><br>
+<button onclick='openBlank("jsfiddle.net")'>jsfiddle.net</button><br>
+<button onclick='openBlank("codepen.io")'>codepen.io</button><br>
+<button onclick='openBlank("replit.com")'>replit.com</button><br>
+<button onclick='openBlank("flowlab.io")'>flowlab.io</button><br>
+<button onclick='openBlank("gdevelop.io")'>gdevelop.io</button><br>
+<button onclick='openBlank("turbowarp.org")'>turbowarp.org</button><br>
+<button onclick='openBlank("emulatorjs.org")'>emulatorjs.org</button><br>
+<button onclick='openBlank("webretro.org")'>webretro.org</button><br>
+<button onclick='openBlank("dos.zone")'>dos.zone</button><br>
+<button onclick='openBlank("js-dos.com")'>js-dos.com</button><br>
+<button onclick='openBlank("wasm4.org")'>wasm4.org</button><br>
+<button onclick='openBlank("tic80.com")'>tic80.com</button><br>
+<button onclick='openBlank("pico-8-edu.com")'>pico-8-edu.com</button><br>
+<button onclick='openBlank("lowresnx.com")'>lowresnx.com</button><br>
+<button onclick='openBlank("8bitworkshop.com")'>8bitworkshop.com</button><br>
+<button onclick='openBlank("openprocessing.org")'>openprocessing.org</button><br>
+<button onclick='openBlank("kaboomjs.com")'>kaboomjs.com</button><br>
+<button onclick='openBlank("melonjs.org")'>melonjs.org</button><br>
+<button onclick='openBlank("babylonjs.com")'>babylonjs.com</button><br>
+<button onclick='openBlank("threejs.org")'>threejs.org</button><br>
+<button onclick='openBlank("phaser.io")'>phaser.io</button><br>
+<button onclick='openBlank("playcanvas.com")'>playcanvas.com</button><br>
+<button onclick='openBlank("construct.net")'>construct.net</button><br>
+<button onclick='openBlank("ubg100.github.io")'>ubg100.github.io</button><br>
+<button onclick='openBlank("ubg9.github.io")'>ubg9.github.io</button><br>
+<button onclick='openBlank("gfiles.org")'>gfiles.org</button><br>
+<button onclick='openBlank("gfiles.io")'>gfiles.io</button><br>
+<button onclick='openBlank("mathgames66.github.io")'>mathgames66.github.io</button><br>
+<button onclick='openBlank("mathgames67.github.io")'>mathgames67.github.io</button><br>
+<button onclick='openBlank("mathgames68.github.io")'>mathgames68.github.io</button><br>
+<button onclick='openBlank("sites.google.com/site/unblockedgameswtf")'>sites.google.com/site/unblockedgameswtf</button><br>
+<button onclick='openBlank("sites.google.com/site/unblockedgames66ez")'>sites.google.com/site/unblockedgames66ez</button><br>
+<button onclick='openBlank("agame.com")'>agame.com</button><br>
+<button onclick='openBlank("friv.com")'>friv.com</button><br>
+<button onclick='openBlank("frivplus.com")'>frivplus.com</button><br>
+<button onclick='openBlank("frivclassic.com")'>frivclassic.com</button><br>
+<button onclick='openBlank("hoodamath.com")'>hoodamath.com</button><br>
+<button onclick='openBlank("kizi.com")'>kizi.com</button><br>
+<button onclick='openBlank("kiz10.com")'>kiz10.com</button><br>
+<button onclick='openBlank("a10.com")'>a10.com</button><br>
+<button onclick='openBlank("miniclip.com/games")'>miniclip.com/games</button><br>
+<button onclick='openBlank("shockwave.com")'>shockwave.com</button><br>
+<button onclick='openBlank("notdoppler.com")'>notdoppler.com</button><br>
+<button onclick='openBlank("freeonlinegames.com")'>freeonlinegames.com</button><br>
+<button onclick='openBlank("bgames.com")'>bgames.com</button><br>
+<button onclick='openBlank("mofunzone.com")'>mofunzone.com</button><br>
+<button onclick='openBlank("primarygames.com")'>primarygames.com</button><br>
+<button onclick='openBlank("playretrogames.com")'>playretrogames.com</button><br>
+<button onclick='openBlank("playclassic.games")'>playclassic.games</button><br>
+<button onclick='openBlank("gamepost.com")'>gamepost.com</button><br>
+<button onclick='openBlank("gamezhero.com")'>gamezhero.com</button><br>
+<button onclick='openBlank("gamekarma.com")'>gamekarma.com</button><br>
+<button onclick='openBlank("game-ark.com")'>game-ark.com</button><br>
+<button onclick='openBlank("flashgames247.com")'>flashgames247.com</button><br>
+<button onclick='openBlank("fog.com")'>fog.com</button><br>
+<button onclick='openBlank("pacogames.com")'>pacogames.com</button><br>
+<button onclick='openBlank("kizigames.games")'>kizigames.games</button><br>
+<button onclick='openBlank("poki2.net")'>poki2.net</button><br>
+<button onclick='openBlank("playhub.com")'>playhub.com</button><br>
+<button onclick='openBlank("play-games.com")'>play-games.com</button><br>
+<button onclick='openBlank("1001games.com")'>1001games.com</button><br>
+<button onclick='openBlank("roundgames.net")'>roundgames.net</button><br>
+<button onclick='openBlank("gameplaf.com")'>gameplaf.com</button><br>
+<button onclick='openBlank("gamezland.com")'>gamezland.com</button><br>
+<button onclick='openBlank("gamez.io")'>gamez.io</button><br>
+<button onclick='openBlank("gameonbrowser.com")'>gameonbrowser.com</button><br>
+<button onclick='openBlank("gamezop.com")'>gamezop.com</button><br>
+<button onclick='openBlank("playbestgames.com")'>playbestgames.com</button><br>
+<button onclick='openBlank("gamekb.com")'>gamekb.com</button><br>
+<button onclick='openBlank("gamegiraffe.com")'>gamegiraffe.com</button><br>
+<button onclick='openBlank("gameflare.net")'>gameflare.net</button><br>
+<button onclick='openBlank("gamezhero.net")'>gamezhero.net</button><br>
+<button onclick='openBlank("gamezhero.org")'>gamezhero.org</button><br>
+<button onclick='openBlank("gamezhero.co")'>gamezhero.co</button><br>
+</body>
+</html>
+
