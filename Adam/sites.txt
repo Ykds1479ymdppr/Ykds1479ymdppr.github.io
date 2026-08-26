@@ -1,4 +1,12 @@
-  <button onclick='openBlank("duck.tinyexams.com")'>duck.tinyexams.com</button> (actually this site has minecraft so you can use this for now)<br>
+  //data:text/html,<title>Jesus Deblocker</title><iframe src="https://trinket.io/embed/html/506d5cc7c902?outputOnly=true%22%20width=%22100%%22%20height=%22100%%22%20frameborder=%220%22%20marginwidth=%220%22%20marginheight=%220%22%20allowfullscreen%3E%3C/iframe%3E
+  //anura.pro
+  //https://web-os--josephine252525.replit.app/
+  //meow.camera
+  //https://blocked.goguardian.com/x3/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9YWJvdXQlM0FibGFuayZyczuu1YM19SRVBPUlQmc3Q9c2hpZWxkJnY9MSZ4M3JwaT1lOWUyZWYxNy0xNzQ2LTRmMTYtOWY0Yi01OTdlZTgzMWI4MmQ%3D&sum=920cf510
+  //https://blocked.goguardian.com/?ctx=YWZpPTIyMTQ2MDE2JmFwaT0xOTAxNDkmb2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZoYWhhZ2FtZXMuY29tJTJGJnJzPUFETUlOX1NJVEVfRklMVEVSJnN0PXNoaWVsZCZ2PTE%3D&sum=577b26c2
+  //https://blocked.goguardian.com/teacher/block.html?ctx=https://blocked.goguardian.com/teacher/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRnNlYXJjaCUzRnElM0RoYWZkcyUyNnJseiUzRDFDQUpJS1VfZW5VUzEyMTIlMjZvcSUzRGhhZmRzJTI2Z3NfbGNycCUzREVnWmphSEp2YldVeUJnZ0FFRVVZT1RJTENBRVFBQmdLR0FzWWdBUXlDd2dDRUFBWUNoZ0xHSUFFTWdzSUF4QUFHQW9ZQ3hpQUJESUxDQVFRQUJnS0dBc1lnQVF5Q3dnRkVBQVlDaGdMR0lBRU1nc0lCaEFBR0FvWUN4aUFCRElMQ0FjUUFCZ0tHQXNZZ0FReUN3Z0lFQzRZQ2hnTEdJQUVNZ3NJQ1JBdUdBb1lDeGlBQk5JQkJ6VTVObW93YWplb0FnQ3dBZ0ElMjZzb3VyY2VpZCUzRGNocm9tZSUyNmllJTNEVVRGLTglMjZzYWZlJTNEYWN0aXZlJTI2c3N1aSUzRG9uJnJzPVRFQUNIRVJfU0NFTkUmc3Q9c2hpZWxkJnRzYT0xNTEzMzUyMiZ0c2k9MzM1NTc2OCZ2PTE%3D&sum=f31b5792%3D
+
+<button onclick='openBlank("duck.tinyexams.com")'>duck.tinyexams.com</button> (actually this site has minecraft so you can use this for now)<br>
   <button onclick='openBlank("hahagames.com")'>hahagames.com</button><br>
   <button onclick="openBlank('anura.pro')">anura.pro</button><br>
   <button onclick="openBlank('meow.camera')">meow.camera</button><br>
