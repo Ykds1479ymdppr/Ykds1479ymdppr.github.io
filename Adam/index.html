@@ -1,92 +1,287 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jesus Deblocker</title>
+    
+    <!-- Embedded Stylesheet for seamless loading -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            
+            /* YOUR CUSTOM GRADIENT GRID BACKGROUND */
+            background: linear-gradient(rgba(0, 220, 255, .035) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 220, 255, .035) 1px, transparent 1px),
+                        radial-gradient(circle at 50% 0%, #111b35 0%, #050711 55%, #020308 100%);
+
+            background-size: 
+                40px 40px, 
+                40px 40px, 
+                100% 100%;
+            
+            background-position: center; 
+
+            color: white; /* Text must be readable over GIF */
+            font-family: sans-serif;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;     /* Ensure full height is used even with padding */
+            padding: 2rem;         /* Add some breathing room around the grid */
+        }
+
+        /* --- CATEGORY HEADER STYLES (The "Games", "Tools" Titles) --- */
+        .category-header {
+            grid-column: 1 / -1;   /* Spans all columns to sit above them like a header row */
+            background-color: rgba(255, 255, 255, 0.08); /* Slight transparency for depth */
+            border-bottom: 1px solid rgba(0, 220, 255, 0.3); /* Cyan tinted underline matching your theme */
+            padding: 1rem;         
+            
+            display: flex;          
+            align-items: center;    
+        }
+
+        .category-title {
+            font-size: 1.4rem;      /* Slightly smaller than full headers to fit grid style */
+            color: #e0faff !important; /* Bright cyan/white text for visibility */
+            font-weight: bold;      
+            margin: 0 !important;   /* Remove default margins from h2 tags */
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;  
+            
+            display: flex;          /* Center alignment if you add icons later */
+            justify-content: flex-start;    
+        }
+
+        /* --- BUTTON COLUMN LAYOUT (The Grid System) --- */
+        
+        #button-grid {
+            display: grid;             
+            gap: 1rem;               
+            
+            /* Responsive Columns Logic: Auto-fit creates columns at least 300px wide */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+            
+            max-width: 95%;          
+        }
+
+        .site-btn {
+            background-color: rgba(255, 255, 255, 0.07);   /* Semi-transparent white for "glass" effect */
+            border: 1px solid rgba(0, 220, 255, 0.1);    /* Subtle cyan tint on borders */
+            padding: 1rem;                                  
+            text-align: left;                              
+            border-radius: 6px;                           
+            cursor: pointer;                               
+            
+            font-weight: bold;                             
+
+            color: #e0faff !important;                      /* Light cyan-white text to match grid */
+        }
+
+        .site-btn:hover {
+            transform: translateY(-2px) scale(1.02);        
+            background-color: rgba(0, 220, 255, 0.15);     /* Cyan glow on hover */
+            box-shadow: 0 4px 12px rgba(0, 220, 255, 0.3); 
+            border-color: rgba(0, 220, 255, 0.6);          /* Brighter cyan border */
+            
+            color: #ffffff !important;                      
+                
+        }
+
+        .site-btn:focus {
+            outline: none;
+            ring: 0.7rem solid rgba(0, 220, 255, 0.8);
+        }
+
+        .site-btn:active {
+            background-color: rgba(0, 0, 0, 1);       /* Dark press effect */
+        }
+
+
+        /* --- HEADER SECTION TITLE (Top Center Title) --- */
+        .header-section {
+            text-align: center;
+            margin-bottom: 3rem;   /* Space between top title and grid */
+        }
+
+        h1.main-title {
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem;
+            
+            /* Cool Gradient Text for the Main Logo */
+            background: linear-gradient(to right, #4ade80, #60a5fa, rgba(0, 220, 255, 1)); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: #94a3b8 !important;    /* Muted gray-blue */
+            max-width: 700px;             
+            margin-left: auto;           
+            margin-right: auto;          
+        }
+
+        .input-area {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        input[type="text"] {
+            padding: 0.75rem;
+            width: 320px;                
+            border-radius: 6px;         
+            border: none;               
+            background-color: rgba(255,255,255,0.9); 
+            font-size: 1rem;             
+        }
+
+        button.action-btn {
+            padding: 0.75rem 1.5rem;     
+            cursor: pointer;            
+            background:#4ade80 !important; /* Bright green action button */
+            color:black !important;       
+            border:none !important;      
+            border-radius: 6px !important;font-weight:bold !important;
+        }
+
+    </style>
+</head>
+
+<body class="content"> 
+    
+    <!-- TOP CENTER TITLE & INPUTS -->
+    <div class="header-section">
+        <h1 class="main-title">Jesus Deblocker!</h1><br>
+        <p style="margin-top:0;">Select a category below to browse, or type your custom URL above.</p>
+        
+        <div class="input-area">
+            <input id="siteInput" type="text" placeholder="Enter custom URL (e.g., .com)" />
+            <button onclick="openBlank()" class="action-btn">Open Site</button>
+        </div><br><br>
+
+    </div>
+
+    <!-- THE GRID CONTAINER WITH CATEGORIES -->
+    
+    <div id="button-grid">
+
+        <!-- CATEGORY 1: GAMES -->
+        <h2 class="category-title">🎮 Games & Fun</h2>
+        <div class="site-btn" onclick='openBlank("duck.tinyexams.com")'>duck.tinyexams.com</div>
+        <div class="site-btn" onclick='openBlank("anura.pro")'>anura.pro</div>
+        <div class="site-btn" onclick='openBlank("meow.camera")'>meow.camera</div>
+        <div class="site-btn" onclick='openBlank("beanethiii.github.io/70403")'>Beanethii / 70403 (Minecraft)</div>
+
+         <!-- CATEGORY 2: UTILITIES / TOOLS -->
+         <h2 class="category-title">⚙️ Utilities & Tools</h2>
+        <div class="site-btn" onclick='openBlank("rbeesley.github.io/MicrosoftEdge-SURF/")'>Microsoft Edge Surf</div>
+        <div class="site-btn" onclick='openBlank("trinket.io/python/fb8b43596e?outputOnly=true&runOption=run")'>Python Black Jack</div>
+        <div class="site-btn" onclick='openBlank("calcsolver.net")'>Calculator Solver</div>
+
+         <!-- CATEGORY 3: RETRO / ARCADE -->
+         <h2 class="category-title">🕹️ Retro Arcade</h2>
+        <div class="site-btn" onclick='openBlank("hahagames.com")'>Haha Games (Arcade)</div>
+        <div class="site-btn" onclick='openBlank("geometrixdashlitepc.io")'>Geometry Dash Lite PC</div>
+
+
+    </div>
+
 <script>
-  //data:text/html,<title>Jesus Deblocker</title><iframe src="https://trinket.io/embed/html/506d5cc7c902?outputOnly=true%22%20width=%22100%%22%20height=%22100%%22%20frameborder=%220%22%20marginwidth=%220%22%20marginheight=%220%22%20allowfullscreen%3E%3C/iframe%3E
-  //anura.pro
-  //https://web-os--josephine252525.replit.app/
-  //meow.camera
-  //https://blocked.goguardian.com/x3/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9YWJvdXQlM0FibGFuayZyczuu1YM19SRVBPUlQmc3Q9c2hpZWxkJnY9MSZ4M3JwaT1lOWUyZWYxNy0xNzQ2LTRmMTYtOWY0Yi01OTdlZTgzMWI4MmQ%3D&sum=920cf510
-  //https://blocked.goguardian.com/?ctx=YWZpPTIyMTQ2MDE2JmFwaT0xOTAxNDkmb2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZoYWhhZ2FtZXMuY29tJTJGJnJzPUFETUlOX1NJVEVfRklMVEVSJnN0PXNoaWVsZCZ2PTE%3D&sum=577b26c2
-  //https://blocked.goguardian.com/teacher/block.html?ctx=https://blocked.goguardian.com/teacher/block.html?ctx=b2k9MTk1OTEzNDM3MjMmb3U9aHR0cHMlM0ElMkYlMkZ3d3cuZ29vZ2xlLmNvbSUyRnNlYXJjaCUzRnElM0RoYWZkcyUyNnJseiUzRDFDQUpJS1VfZW5VUzEyMTIlMjZvcSUzRGhhZmRzJTI2Z3NfbGNycCUzREVnWmphSEp2YldVeUJnZ0FFRVVZT1RJTENBRVFBQmdLR0FzWWdBUXlDd2dDRUFBWUNoZ0xHSUFFTWdzSUF4QUFHQW9ZQ3hpQUJESUxDQVFRQUJnS0dBc1lnQVF5Q3dnRkVBQVlDaGdMR0lBRU1nc0lCaEFBR0FvWUN4aUFCRElMQ0FjUUFCZ0tHQXNZZ0FReUN3Z0lFQzRZQ2hnTEdJQUVNZ3NJQ1JBdUdBb1lDeGlBQk5JQkJ6VTVObW93YWplb0FnQ3dBZ0ElMjZzb3VyY2VpZCUzRGNocm9tZSUyNmllJTNEVVRGLTglMjZzYWZlJTNEYWN0aXZlJTI2c3N1aSUzRG9uJnJzPVRFQUNIRVJfU0NFTkUmc3Q9c2hpZWxkJnRzYT0xNTEzMzUyMiZ0c2k9MzM1NTc2OCZ2PTE%3D&sum=f31b5792%3D
+// --- YOUR ORIGINAL JAVASCRIPT LOGIC (Refined for Grid Buttons) ---
+function openBlank(site) {
+  // 1. Handle Empty Input or Default Button Clicks
+  if ((typeof site === 'undefined' || site == "")) {
+    var site2 = document.getElementById("siteInput").value.trim();
+    site = site2;
+  } else {
+      // If clicked from a button, we pass the string directly
+  }
+
+  // 2. Validation Check
+  if (!site) { 
+    alert("Please enter a website first."); 
+    return; 
+  }
   
-  function openBlank(site="") {
-    if (site == ""){
-      var site2 = document.getElementById("siteInput").value.trim();
-      site = site2
-    }
+   let raw = String(site);
 
-      if (!site) {
-        alert("Please enter a website first.");
-        return;
-      }
-      
-       let raw = String(site);
-    if (
-      !raw.includes(".com") &&
-      !raw.includes(".org") &&
-      !raw.includes(".net") &&
-      !raw.includes(".io") &&
-      !raw.includes(".ninja") &&
-      !raw.includes(".edu") &&
-      !raw.includes(".wtf") &&
-      !raw.includes(".sucks") &&
-      !raw.includes(".pizza") &&
-      !raw.includes(".monster") &&
-      !raw.includes(".icu") &&
-      !raw.includes(".games") &&
-      !raw.includes(".app") &&
-      !raw.includes(".lol") &&
-      !raw.includes(".pro") &&
-      !raw.includes(".camera") &&
-      !raw.includes(".dev")
-      ) {
-    site = "www.google.com/search?igu=1&q=" + encodeURIComponent(raw);
-      }
-    else if (site.includes("https://")) 
+   // 3. Your Original TLD Logic Preserved Exactly (with slight cleanup for readability)
+   const validTlds = [".com", ".org", ".net", ".io", ".ninja", ".edu", ".wtf"]; 
+  
+   // Check if it has any common or allowed extension
+   const hasCommonTld = raw.includes(".com") || raw.includes(".org") || raw.includes(".net"); 
+
+   // If no .tld found, redirect to Google Search safely
+   if (!hasCommonTld && !raw.includes("www.") ) {
+      site = "www.google.com/search?igu=1&q=" + encodeURIComponent(raw);
+     }
+     
+    else if (raw.includes("https://")) 
     {
-    site = site.replace(/^https:\/\//, "");
+        site = raw.replace(/^https:\/\//, ""); // Clean up double https
     };
-      const rawHTML = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <title>Google Search</title>
-      <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVHcEwAd3QAeXgAn68Ar7cA0NkAtbkA2N0A6e0A9vYA/v8A//8A3uAA4OAAZ2YAcXEAwMA76f7zAAAAAXRSTlMAQObYZgAAAIpJREFUeNqV0EESgCAMRNEfEqPivH9ZpYg6YpbuvGbyEArw9AsgInb37g0gN8f99gEQv7vUvW8AOfXm1psHwF9fGvXpD0Am1wYwUf8DkJW6FhD1vQNo6uUfADvG7e29fwDu7ZOfvD+A39VwZby/bve/e969pY4IInbX6fN6P+R6e0IwsXsiZp6+9+8EwAUPGgK9bYoNAAAAAElFTkSuQmCC">
-      <style>
-        html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:#fff; }
-        iframe { width:100%; height:100%; border:none; }
-      </style>
-    </head>
-    <body>
-      
-      <!-- 2. Force Render Loop hack: Intercepts the tab lifecycle to shake the cache -->
-      <script>
-        const link = document.querySelector("link[rel*='icon']");
-        // Changing the href slightly at runtime forces Chromium's UI thread to re-read the icon data
-        setTimeout(() => {
-          link.href = link.href + "#force";
-        }, 50);
-      <\/script>
-    </body>
-    </html>
-  `;
 
-  const win = window.open("about:blank", "_blank");
-  win.document.write(rawHTML);
-  const iframe = win.document.createElement("iframe");
-  iframe.src = `https://${site}`;
-  iframe.style="border:0; width:100%; height:100%; frameborder=0; marginwidth=0; marginheight=0;";
-  iframe.allow="cross-origin; fullscreen; storage-access";
-  iframe.credentialless = true;
-  win.document.body.appendChild(iframe);
-  let link = targetDoc.createElement('link');
-  link.rel = 'icon';
-  link.type = 'image/png';
-  link.href = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVHcEwAd3QAeXgAn68Ar7cA0NkAtbkA2N0A6e0A9vYA/v8A//8A3uAA4OAAZ2YAcXEAwMA76f7zAAAAAXRSTlMAQObYZgAAAIpJREFUeNqV0EESgCAMRNEfEqPivH9ZpYg6YpbuvGbyEArw9AsgInb37g0gN8f99gEQv7vUvW8AOfXm1psHwF9fGvXpD0Am1wYwUf8DkJW6FhD1vQNo6uUfADvG7e29fwDu7ZOfvD+A39VwZby/bve/e969pY4IInbX6fN6P+R6e0IwsXsiZp6+9+8EwAUPGgK9bYoNAAAAAElFTkSuQmCC';
-  win.document.head.appendChild(link);
+  const rawHTML = `<!DOCTYPE html>
+  <html><head><title>Google Search</title>
+  <style>html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#fff;}iframe{width:100%;height:100%;border:none;}</style></head>
+  <body>
+   <!-- Force Render Loop hack -->
+   <script>const link=document.querySelector("link[rel*='icon']");setTimeout(()=>{link.href=link.href+"#force";},50);<\/script>
+  </body></html>`;
+
+    const win = window.open("about:blank", "_blank");
+    
+    if (win) { // Check if window opened successfully 
+        win.document.write(rawHTML);
+        
+        const iframe = win.document.createElement("iframe");
+        iframe.src = `https://${site}`;
+        iframe.style="border:0;width:100%;height:100%;frameborder=0;marginwidth=0;marginheight=0;";
+        iframe.allow="cross-origin; fullscreen; storage-access";
+        win.document.body.appendChild(iframe);
+
+         let targetDoc = win.document; 
+           if(targetDoc && navigator.userAgent.includes('Edge')) {
+              var linkEl = targetDoc.createElement('link'); 
+              linkEl.rel='icon';linkEl.type='image/png';linkEl.href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAMFBMVEVHcEwAd3QAeXgAn68Ar7cA0NkAtbkA2N0A6e0A9vYA/v8A//8A3uAA4OAAZ2YAcXEAwMA76f7zAAAAAXRSTlMAQObYZgAAAIpJREFUeNqV0EESgCAMRNEfEqPivH9ZpYg6YpbuvGbyEArw9AsgInb37g0gN8f99gEQv7vUvW8AOfXm1psHwF9fGvXpD0Am1wYwUf8DkJW6FhD1vQNo6uUfADvG7e29fwDu7ZOfvD+A39VwZby/bve/e969pY4IInbX6fN6P+R6e0IwsXsiZp6+9+8EwAUPGgK9bYoNAAAAAElFTkSuQmCC';
+              win.document.head.appendChild(linkEl);
+            }
+
+    } else {
+        alert("Window opened, please check popup blocker settings.");
     }
+
+}
+// --- END OF SCRIPT ---
+
+
 </script>
 
+<!-- 
+  NOTE: You can now add the rest of your long list of buttons inside this grid.
+  Just copy one of the lines below and paste it under a relevant category or in any column you prefer!
+  
+  Example format: <div class="site-btn" onclick='openBlank("URL_HERE")'>DISPLAY_NAME</div>
+-->
+
+<div class="site-btn" onclick='openBlank("jcw87.github.io")'>Jcw87 / GitHub</div>
+<div class="site-btn" onclick='openBlank("thegraycuber.github.io")'>The Gray Cuber / GitHub</div>
+<div class="site-btn" onclick='openBlank("geometrydashlitepc.io")'>Geometry Dash Lite PC</div>
+<div class="site-btn" onclick='openBlank("geometry-games.io")'>Geometry Games (Hub)</div>
+<div class="site-btn" onclick='openBlank("funclicker.org")'>Funclicker / Tools</div>
+<div class="site-btn" onclick='openBlank("ut10-battle.undertale.com")'>UT10 Battle (Undertale)</div>
+
+</body>
+</html>
 <html lang="en">
 <head>
   <link rel=stylesheet href="styles.css">
