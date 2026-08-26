@@ -2,7 +2,6 @@ body {
             margin: 0;
             padding: 0;
             height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevent scrollbars if needed */
             
             /* Set your GIF file path here */
             background-image: url('vecteezy_binary-code-bg_68011085-ezgif.com-optimize.gif'); 
@@ -10,7 +9,6 @@ body {
             /* Optional: cover the whole area or keep aspect ratio */
             background-size: cover; 
             background-position: center; 
-            background-repeat: no-repeat;
 
             color: white; /* Text must be readable over GIF */
             font-family: sans-serif;
@@ -20,7 +18,6 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100%;
         }
 button {
   transition: 0.25s;
