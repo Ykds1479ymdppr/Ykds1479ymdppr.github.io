@@ -3,11 +3,15 @@ body {
             padding: 0;
             height: 100vh; /* Full viewport height */
             
-            /* Set your GIF file path here */
-            background-image: url('11da17f139514aa738fea26d9265c4b4.gif'); 
-            
-            /* Optional: cover the whole area or keep aspect ratio */
-            background-size: cover; 
+  background:
+    linear-gradient(rgba(0, 220, 255, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 220, 255, .035) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, #111b35 0%, #050711 55%, #020308 100%);
+
+  background-size:
+    40px 40px,
+    40px 40px,
+    100% 100%;
             background-position: center; 
 
             color: white; /* Text must be readable over GIF */
@@ -19,6 +23,7 @@ body {
             align-items: center;
             justify-content: center;
         }
+
 button {
   transition: 0.25s;
   cursor: pointer;
