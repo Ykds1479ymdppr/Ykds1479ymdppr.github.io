@@ -1,144 +1,185 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-            margin: 0; padding: 0; height: 100vh; 
-            
-            /* YOUR CUSTOM GRADIENT GRID BACKGROUND */
-            background: linear-gradient(rgba(0, 220, 255, .035) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(0, 220, 255, .035) 1px, transparent 1px),
-                        radial-gradient(circle at 50% 0%, #111b35 0%, #050711 55%, #020308 100%);
+    background: linear-gradient(rgba(0, 220, 255, .035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 220, 255, .035) 1px, transparent 1px),
+                radial-gradient(circle at 50% 0%, #111b35 0%, #050711 55%, #020308 100%);
+    background-size: 40px 40px; 
+    color: white; 
+    font-family: 'Segoe UI', sans-serif;
+}
 
-            background-size: 
-                40px 40px, 
-                40px 40px, 
-                100% 100%;
-            
-            background-position: center; 
+#top-title-container {
+    text-align: center; 
+    padding: 4rem 2rem; 
+    margin-bottom: 2rem; 
+    position: relative; 
+    z-index: 2;
+}
 
-            color: white; /* Text must be readable over GIF */
-            font-family: sans-serif;
-        }
+h1.main-title { 
+    font-size: 3.5rem; 
+    margin-bottom: 1rem;
+}
 
-        .content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;     
-            padding: 2rem;    
-            
-            color: #ffffff !important;    /* Force white text for readability */
-        }
+.search-box-container { 
+    display: flex; 
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 20px; 
+    flex-wrap: wrap;
+}
 
-        /* --- CATEGORY HEADER STYLES (The "Games", "Tools" Titles) --- */
-        .category-header {
-            grid-column: 1 / -1;   /* Spans all columns to sit above them like a header row */
-            background-color: rgba(255, 255, 255, 0.08); /* Slight transparency for depth */
-            border-bottom: 1px solid rgba(0, 220, 255, 0.3); /* Cyan tinted underline matching your theme */
-            padding: 1rem;         
-            
-            display: flex;          
-            align-items: center;    
-        }
+input[type="text"] { 
+    background-color: rgba(255,255,255,0.9); 
+    border: none; 
+    padding: 10px 15px; 
+    width: 300px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+    
+button.action-btn { 
+    background: #4ade80;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .category-title {
-            font-size: 1.4rem;      /* Slightly smaller than full headers to fit grid style */
-            color: #e0faff !important; /* Bright cyan/white text for visibility */
-            font-weight: bold;      
-            margin: 0 !important;   /* Remove default margins from h2 tags */
-            text-transform: uppercase; 
-            letter-spacing: 0.5px;  
-            
-            display: flex;          /* Center alignment if you add icons later */
-            justify-content: flex-start;    
-        }
+#main-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 35px;
+    padding: 0 20px 50px 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
 
-        /* --- BUTTON COLUMN LAYOUT (The Grid System) --- */
-        
-        #button-grid {
-            display: grid;             
-            gap: 1rem;               
-            
-            /* Responsive Columns Logic: Auto-fit creates columns at least 300px wide */
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            
-            max-width: 95%;          
-        }
+.column {
+    display: flex;
+    flex-direction: column;
+}
 
-        .site-btn {
-            background-color: rgba(255, 255, 255, 0.07);   /* Semi-transparent white for "glass" effect */
-            border: 1px solid rgba(0, 220, 255, 0.1);    /* Subtle cyan tint on borders */
-            padding: 1rem;                                  
-            text-align: left;                              
-            border-radius: 6px;                           
-            cursor: pointer;                               
-            
-            font-weight: bold;                             
+/* Clickable Main Header */
+.category-header {
+    background-color: rgba(0, 255, 240, .15); 
+    border-left: 6px solid #0deef9;
+    padding: 1.2rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    color: #e0faff;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            color: #e0faff !important;                      /* Light cyan-white text to match grid */
-        }
+.category-header:hover {
+    background-color: rgba(0, 255, 240, .25);
+    transform: translateY(-2px);
+}
 
-        .site-btn:hover {
-            transform: translateY(-2px) scale(1.02);        
-            background-color: rgba(0, 220, 255, 0.15);     /* Cyan glow on hover */
-            box-shadow: 0 4px 12px rgba(0, 220, 255, 0.3); 
-            border-color: rgba(0, 220, 255, 0.6);          /* Brighter cyan border */
-            
-            color: #ffffff !important;                      
-                
-        }
+.category-header::after {
+    content: '▼';
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
 
-        .site-btn:focus {
-            outline: none;
-            ring: 0.7rem solid rgba(0, 220, 255, 0.8);
-        }
+.category-header.collapsed::after {
+    transform: rotate(-90deg);
+}
 
-        .site-btn:active {
-            background-color: rgba(0, 0, 0, 1);       /* Dark press effect */
-        }
+/* Collapsible content container */
+.column-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 5000px;
+}
 
+.column-content.collapsed {
+    max-height: 0;
+}
 
-        /* --- HEADER SECTION TITLE (Top Center Title) --- */
-        .header-section {
-            text-align: center;
-            margin-bottom: 3rem;   /* Space between top title and grid */
-        }
+/* Clickable Sub-Header */
+.sub-header {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 220, 255, 0.2);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    color: #a0f0ff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        h1.main-title {
-            font-size: 2.5rem; 
-            margin-bottom: 0.5rem;
-            
-            /* Cool Gradient Text for the Main Logo */
-            background: linear-gradient(to right, #4ade80, #60a5fa, rgba(0, 220, 255, 1)); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.sub-header:hover {
+    background-color: rgba(0, 220, 255, .15);
+    border-color: rgba(0, 220, 255, 0.4);
+}
 
-        p.subtitle {
-            color: #94a3b8 !important;    /* Muted gray-blue */
-            max-width: 700px;             
-            margin-left: auto;           
-            margin-right: auto;          
-        }
+.sub-header::after {
+    content: '▼';
+    font-size: 0.7em;
+    transition: transform 0.3s;
+}
 
-        .input-area {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
+.sub-header.collapsed::after {
+    transform: rotate(-90deg);
+}
 
-        input[type="text"] {
-            padding: 0.75rem;
-            width: 320px;                
-            border-radius: 6px;         
-            border: none;               
-            background-color: rgba(255,255,255,0.9); 
-            font-size: 1rem;             
-        }
+/* Sub-section content */
+.sub-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    max-height: 2000px;
+    margin-bottom: 1rem;
+}
 
-        button.action-btn {
-            padding: 0.75rem 1.5rem;     
-            cursor: pointer;            
-            background:#4ade80 !important; /* Bright green action button */
-            color:black !important;       
-            border:none !important;      
-            border-radius: 6px !important;font-weight:bold !important;
-        }
+.sub-content.collapsed {
+    max-height: 0;
+    margin-bottom: 0;
+}
+
+.site-btn { 
+    background-color: rgba(255, 255, 255, 0.07);   
+    border: 1px solid rgba(0, 220, 255, 0.1);      
+    padding: 1rem;                             
+    text-align: left;                               
+    border-radius: 6px;                            
+    cursor: pointer;                                
+    font-weight: bold;                              
+    color: #e0faff;                      
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.site-btn:hover {
+    background-color: rgba(0, 220, 255, .18);     
+    box-shadow: 0 4px 12px rgba(0, 220, 255, .3); 
+    transform: translateY(-3px) scale(1.01);      
+    border-color: white;                          
+}
+
+@media (max-width: 768px) {
+    h1.main-title { font-size: 2.5rem; }
+}
