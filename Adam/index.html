@@ -1,98 +1,209 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="styles.css">
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jesus Deblocker</title>
-    
-    <!-- Embedded Stylesheet for seamless loading -->
+    <title>Google Search</title>
+    <link rel="stylesheet" href="styles.css"> 
 </head>
 
-<body class="content"> 
-    <h1>Welcome to the Jesus Deblocker!</h1><br>
-  <h2><a href="../">Home</a></h2><br>
-  <strong>Instructions: <br>
-  1. Click on a site below.<br>
-  2. If you have a site that isn't listed, paste it into the Textbox.<br>
-  3. Keep the extension (ex: .com or .org)<br>
-  4. Click "Open Site" and enjoy! <br> </strong>
-  <em>Bonus. Want to know how it works? I'll leave a link to an explanation once I finish it below.<br></em>
-  <input id="siteInput" type="text" placeholder="Textbox (Enter Site)" style="width:250px;">
-  <button onclick="openBlank()">Open Site</button>
-    
-    <!-- TOP CENTER TITLE & INPUTS -->
-    <div class="header-section">
-        <h1 style="font-size: 2.5rem; margin-bottom:0.5rem;">Jesus Deblocker!</h1><br>
-        <p style="margin-top:0;">Select a category below to browse, or type your custom URL above.</p>
-        
-        <div class="input-area">
-            <input id="siteInput" type="text" placeholder="Enter custom URL (e.g., .com)" />
-            <button onclick="openBlank()" style="padding:0.75rem 1.5rem; cursor:pointer; background:#4ade80 !important; color:black !important; border:none !important; border-radius:6px !important;font-weight:bold !important;">Open Site</button>
-        </div><br><br>
+<body>
+    <div id="top-title-container">
+        <h1 class="main-title">Jesus Deblocker</h1>
+        <div class="search-box-container">
+            <input id="siteInput" type="text" placeholder="Enter custom URL..." />
+            <button onclick="openBlank(siteInput.value)" class="action-btn">Open Site</button>
+            <a href="../" style="color:white;text-decoration:none;margin-left:20px;font-size:24px;opacity:0.7">&larr;</a> 
+        </div>
+    </div>
+
+    <div id="main-grid-wrapper">
+
+        <section class="column">
+            <h2 class="category-header" onclick="toggleColumn(this)">
+                Games
+            </h2>
+            <div class="column-content">
+              <div class="sub-header collapsed" onclick="toggleSub(this)">
+                    Game Hubs
+                </div>
+                <div class="sub-content collapsed">
+                    <div class="site-btn" onclick='openBlank("kbhgames.com")'>KBHGames</div>
+                    <div class="site-btn" onclick='openBlank("gamenora.com")'>Gamenora</div>
+                    <div class="site-btn" onclick='openBlank("gamaverse.com")'>Gamaverse</div>
+                    <div class="site-btn" onclick='openBlank("r74n.com")'>R74N</div>
+                    <div class="site-btn" onclick='openBlank("calcsolver.net")'>Calcsolver</div>
+                </div>
+
+                <div class="sub-header collapsed" onclick="toggleSub(this)">
+                    Geometry Dash
+                </div>
+                <div class="sub-content collapsed">
+                    <div class="site-btn" onclick='openBlank("geometrixdashlitepc.io")'>GD Lite</div>
+                    <div class="site-btn" onclick='openBlank("geometry-games.io")'>Geometry-games</div>
+                    <div class="site-btn" onclick='openBlank("geometrygames.io")'>Geometrygames</div>
+                    <div class="site-btn" onclick='openBlank("dashmetry.com")'>Dashmetry</div>
+                    <div class="site-btn" onclick='openBlank("geometrydash-lite2.io/")'>GD Lite 2</div>
+                </div>
+
+                <div class="sub-header collapsed" onclick="toggleSub(this)">
+                    Classic
+                </div>
+                <div class="sub-content collapsed">
+                    <div class="site-btn" onclick='openBlank("mathster.com/games/tetris/")'>Tetris</div>
+                    <div class="site-btn" onclick='openBlank("offline-dino-game.firebaseapp.com")'>Dino Game</div>
+                    <div class="site-btn" onclick='openBlank("rbeesley.github.io/MicrosoftEdge-SURF/")'>Microsoft Surf</div>
+                </div>
+
+                <div class="sub-header collapsed" onclick="toggleSub(this)">
+                    Miscellaneous
+                </div>
+                <div class="sub-content collapsed">
+                    <div class="site-btn" onclick='openBlank("duck.tinyexams.com")'>Tiny Exams</div>
+                    <div class="site-btn" onclick='openBlank("beanethiii.github.io/70403")'>BeanethIII</div>
+                    <div class="site-btn" onclick='openBlank("ut10-battle.undertale.com")'>Undertale 10th Anniversary</div>
+                    <div class="site-btn" onclick='openBlank("trinket.io/python/fb8b43596e?outputOnly=true&runOption=run")'>Black Jack</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="column">
+            <h2 class="category-header" onclick="toggleColumn(this)">
+                Utilities
+            </h2>
+            <div class="column-content">
+                
+                <div class="sub-header collapsed" onclick="toggleSub(this)">Calculators</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("desmos.com/calculator")'>Desmos</div>
+    <div class="site-btn" onclick='openBlank("calculator.net")'>Calculator</div>
+    <div class="site-btn" onclick='openBlank("geogebra.org/classic")'>GeoGebra</div>
+</div>
+
+<div class="sub-header collapsed" onclick="toggleSub(this)">Writing</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("editpad.org")'>EditPad (simple text)</div>
+    <div class="site-btn" onclick='openBlank("protectedtext.com")'>ProtectedText (encrypted)</div>
+    <div class="site-btn" onclick='openBlank("wordcounter.net")'>Word Counter (with other plagiarism tools and such)</div>
+</div>
+
+<div class="sub-header collapsed" onclick="toggleSub(this)">Time</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("time.is")'>Exact Time</div>
+    <div class="site-btn" onclick='openBlank("timer-tab.com")'>Countdown</div>
+    <div class="site-btn" onclick='openBlank("vclock.com")'>Stopwatch/Alarm</div>
+</div>
+
+<div class="sub-header collapsed" onclick="toggleSub(this)">Programming</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("jsfiddle.net")'>JSFiddle (test code)</div>
+    <div class="site-btn" onclick='openBlank("codepen.io")'>CodePen</div>
+    <div class="site-btn" onclick='openBlank("liveweave.com")'>Liveweave (HTML/CSS/JS)</div>
+    <div class="site-btn" onclick='openBlank("sqlfiddle.com")'>SQL Fiddle</div>
+</div>
+
+<div class="sub-header collapsed" onclick="toggleSub(this)">En/Decryption</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("base64encode.org")'>Base64 Encoder</div>
+    <div class="site-btn" onclick='openBlank("uuidgenerator.net")'>UUID Generator</div>
+    <div class="site-btn" onclick='openBlank("jsonformatter.org")'>JSON Formatter</div>
+    <div class="site-btn" onclick='openBlank("random.org")'>Numbers/lists randomizer</div>
+</div>
+
+<div class="sub-header collapsed" onclick="toggleSub(this)">Colors/Drawing</div>
+<div class="sub-content collapsed">
+    <div class="site-btn" onclick='openBlank("coolors.co")'>Coolors (color palettes)</div>
+    <div class="site-btn" onclick='openBlank("colorpicker.me")'>Color Picker</div>
+    <div class="site-btn" onclick='openBlank("excalidraw.com")'>Drawing</div>
+</div>
+
+            </div>
+        </section>
 
     </div>
 
-    <!-- THE GRID CONTAINER WITH CATEGORIES -->
-    
-    <div id="button-grid">
+    <script>
+function toggleColumn(header) {
+    const content = header.nextElementSibling;
+    header.classList.toggle('collapsed');
+    content.classList.toggle('collapsed');
+}
 
-        <!-- CATEGORY 1: GAMES (General) -->
-        <h2 class="category-title" style="grid-column:1/-1;background-color:rgba(255,255,255,0.08);border-bottom:1px solid rgba(0,220,255,0.3);padding:1rem;display:flex;align-items:center;font-size:1.4rem;color:#e0faff !important;font-weight:bold;margin:0;text-transform:uppercase;letter-spacing:0.5px;">🎮 General Games & Fun</h2>
-        
-        <div class="site-btn" onclick='openBlank("duck.tinyexams.com")'>Duck Tiny Exams (Minecraft)</div><br>
-        <div class="site-btn" onclick='openBlank("anura.pro")'>Anura Pro</div><br>
-        <div class="site-btn" onclick='openBlank("meow.camera")'>Meow.Camera</div><br>
-        <div class="site-btn" onclick='openBlank("beanethiii.github.io/70403")'>Beanethii / 70403</div><br>
+function toggleSub(subHeader) {
+    const content = subHeader.nextElementSibling;
+    subHeader.classList.toggle('collapsed');
+    content.classList.toggle('collapsed');
+}
 
-         <!-- CATEGORY 2: UTILITIES / TOOLS -->
-         <h2 class="category-title">⚙️ Utilities & Tools</h2>
-        
-        <div class="site-btn" onclick='openBlank("rbeesley.github.io/MicrosoftEdge-SURF/")'>Microsoft Edge Surf (Retro)</div><br>
-        <div class="site-btn" onclick='openBlank("trinket.io/python/fb8b43596e?outputOnly=true&runOption=run")'>Python Black Jack</div><br>
-        <div class="site-btn" onclick='openBlank("calcsolver.net")'>Calculator Solver</div><br>
+function openBlank(url) {
+    // If a button supplies a URL, use that.
+    // Otherwise, get the URL from the input.
+    if (!url) {
+        const urlInput = document.getElementById('siteInput');
+        url = urlInput.value.trim();
 
-         <!-- CATEGORY 3: RETRO / ARCADE -->
-         <h2 class="category-title">🕹️ Retro Arcade & Classics</h2>
-        
-        <div class="site-btn" onclick='openBlank("hahagames.com")'>Haha Games (Arcade)</div><br>
-        <div class="site-btn" onclick='openBlank("geometrixdashlitepc.io")'>Geometry Dash Lite PC</div><br>
-        <div class="site-btn" onclick='openBlank("geometry-games.io")'>Geometry-Games.IO</div><br>
-        <div class="site-btn" onclick='openBlank("geometrygames.io")'>Games.IO (Hub)</div><br>
-        <div class="site-btn" onclick='openBlank("funclicker.org")'>Funclicker / Tools</div><br>
-        <div class="site-btn" onclick='openBlank("ut10-battle.undertale.com")'>UT10 Battle (Undertale)</div><br>
+        if (!url) return;
 
-         <!-- CATEGORY 4: CODING & WEB DEV -->
-         <h2 class="category-title">💻 Coding & Web Dev</h2>
-        
-        <div class="site-btn" onclick='openBlank("jcw87.github.io")'>Jcw87 / GitHub</div><br>
-        <div class="site-btn" onclick='openBlank("thegraycuber.github.io")'>The Gray Cuber / GitHub</div><br>
-        <div class="site-btn" onclick='openBlank("aidn.jp")'>Aidn.JP</div><br>
-        <div class="site-btn" onclick='openBlank("spu7nix.net/spwn")'>Spu7nix (Spawn)</div><br>
-        <div class="site-btn" onclick='openBlank("kbhgames.com")'>KBHGames</div><br>
+        urlInput.value = '';
+    } else {
+        url = url.trim();
+    }
 
-         <!-- CATEGORY 5: ARCADE & CLASSIC GAMES -->
-         <h2 class="category-title">👾 Arcade & Classic Games</h2>
-        
-        <div class="site-btn" onclick='openBlank("gamenora.com")'>GameNora</div><br>
-        <div class="site-btn" onclick='openBlank("dashmetry.com")'>Dashmetry</div><br>
-        <div class="site-btn" onclick='openBlank("mathster.com/games/tetris/")'>Mathster (Tetris)</div><br>
-        <div class="site-btn" onclick='openBlank("geometrydash-lite2.io/")'>Geometry Dash Lite 2</div><br>
-        <div class="site-btn" onclick='openBlank("r74n.com")'>R74N (Cyanide)</div><br>
+    // Add https:// if necessary
+    if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+    }
 
-         <!-- CATEGORY 6: GITHUB IO COLLECTIONS -->
-         <h2 class="category-title">📦 GitHub Collections</h2>
-        
-        <div class="site-btn" onclick='openBlank("gamaverse.com")'>Gamaverse</div><br>
-        <div class="site-btn" onclick='openBlank("oily-diddy-click.base44.app")'>O
-  <h1>Welcome to the Jesus Deblocker!</h1><br>
-  <h2><a href="../">Home</a></h2><br>
-  <strong>Instructions: <br>
-  1. Click on a site below.<br>
-  2. If you have a site that isn't listed, paste it into the Textbox.<br>
-  3. Keep the extension (ex: .com or .org)<br>
-  4. Click "Open Site" and enjoy! <br> </strong>
-  <em>Bonus. Want to know how it works? I'll leave a link to an explanation once I finish it below.<br></em>
-  <input id="siteInput" type="text" placeholder="Textbox (Enter Site)" style="width:250px;">
-  <button onclick="openBlank()">Open Site</button>
+    // Open a new tab
+    const win = window.open('about:blank', '_blank');
 
+    if (!win) {
+        alert('Your browser blocked the new tab.');
+        return;
+    }
+
+    // Put the iframe in the new tab
+    win.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Google Search</title>
+            <style>
+                html, body {
+                    margin: 0;
+                    padding: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background: #000;
+                }
+
+                iframe {
+                    display: block;
+                    border: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+        </head>
+        <body>
+            <iframe
+                src="${url}"
+                allowfullscreen>
+            </iframe>
+        </body>
+        </html>
+    `);
+
+    win.document.close();
+}
+
+document.getElementById('siteInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        openBlank();
+    }
+});
+</script>
+
+</body>
+</html>
