@@ -2,208 +2,416 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Google Search</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jesus Unblocker</title>
+    <meta
+        name="description"
+        content="Jesus Unblocker - a free web hub"
+    >
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div id="top-title-container">
-        <h1 class="main-title">Jesus Deblocker</h1>
-        <div class="search-box-container">
-            <input id="siteInput" type="text" placeholder="Enter custom URL..." />
-            <button onclick="openBlank(siteInput.value)" class="action-btn">Open Site</button>
-            <a href="../" style="color:white;text-decoration:none;margin-left:20px;font-size:24px;opacity:0.7">&larr;</a> 
+
+<div id="app">
+
+    <aside id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">✝</div>
+            <span>Jesus Unblocker</span>
         </div>
-    </div>
 
-    <div id="main-grid-wrapper">
+        <div class="sidebar-scroll">
 
-        <section class="column">
-            <h2 class="category-header" onclick="toggleColumn(this)">
-                Games
-            </h2>
-            <div class="column-content">
-              <div class="sub-header collapsed" onclick="toggleSub(this)">
-                    Game Hubs
-                </div>
-                <div class="sub-content collapsed">
-                    <div class="site-btn" onclick='openBlank("kbhgames.com")'>KBHGames</div>
-                    <div class="site-btn" onclick='openBlank("gamenora.com")'>Gamenora</div>
-                    <div class="site-btn" onclick='openBlank("gamaverse.com")'>Gamaverse</div>
-                    <div class="site-btn" onclick='openBlank("r74n.com")'>R74N</div>
-                    <div class="site-btn" onclick='openBlank("calcsolver.net")'>Calcsolver</div>
+            <div class="sidebar-title">Navigation</div>
+
+            <button class="nav-button active" onclick="showHub()">
+                🏠 Home
+            </button>
+
+            <button class="nav-button" onclick="showFavorites()">
+                ⭐ Favorites
+            </button>
+
+            <button class="nav-button" onclick="showRecent()">
+                🕘 Recent
+            </button>
+
+            <div class="sidebar-title">Categories</div>
+
+            <div id="categoryNav"></div>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="secondary" onclick="openSettings()">
+                ⚙️ Settings
+            </button>
+        </div>
+
+    </aside>
+
+    <main id="main">
+
+        <div id="tabs"></div>
+
+        <div id="toolbar">
+
+            <button
+                class="tool-button"
+                id="mobileMenu"
+                onclick="toggleSidebar()"
+                title="Menu"
+            >
+                ☰
+            </button>
+
+            <button
+                class="tool-button"
+                id="backButton"
+                onclick="goBack()"
+                title="Back"
+            >
+                ←
+            </button>
+
+            <button
+                class="tool-button"
+                id="forwardButton"
+                onclick="goForward()"
+                title="Forward"
+            >
+                →
+            </button>
+
+            <button
+                class="tool-button"
+                onclick="reloadFrame()"
+                title="Reload"
+            >
+                ↻
+            </button>
+
+            <form id="addressForm">
+
+                <span id="addressIcon">🌐</span>
+
+                <input
+                    id="addressInput"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Enter URL or search..."
+                >
+
+                <button
+                    type="button"
+                    id="favoriteButton"
+                    onclick="toggleFavoriteCurrent()"
+                    title="Favorite"
+                >
+                    ☆
+                </button>
+
+            </form>
+
+            <button
+                class="tool-button"
+                onclick="copyCurrentUrl()"
+                title="Copy URL"
+            >
+                📋
+            </button>
+
+            <button
+                class="tool-button"
+                onclick="openExternal()"
+                title="Open externally"
+            >
+                ↗
+            </button>
+
+            <button
+                class="tool-button"
+                onclick="toggleFullscreen()"
+                title="Fullscreen"
+            >
+                ⛶
+            </button>
+
+        </div>
+
+        <div id="content">
+
+            <section id="hub">
+
+                <div class="hero">
+                    <h1>Jesus Unblocker</h1>
+
+                    <p>
+                        A simple browser hub for frameable web apps and sites.
+                    </p>
                 </div>
 
-                <div class="sub-header collapsed" onclick="toggleSub(this)">
-                    Geometry Dash
-                </div>
-                <div class="sub-content collapsed">
-                    <div class="site-btn" onclick='openBlank("geometrixdashlitepc.io")'>GD Lite</div>
-                    <div class="site-btn" onclick='openBlank("geometry-games.io")'>Geometry-games</div>
-                    <div class="site-btn" onclick='openBlank("geometrygames.io")'>Geometrygames</div>
-                    <div class="site-btn" onclick='openBlank("dashmetry.com")'>Dashmetry</div>
-                    <div class="site-btn" onclick='openBlank("geometrydash-lite2.io/")'>GD Lite 2</div>
+                <input
+                    id="hubSearch"
+                    class="hub-search"
+                    placeholder="Search sites..."
+                    autocomplete="off"
+                >
+
+                <div id="hubContent"></div>
+
+            </section>
+
+            <section
+                id="iframeContainer"
+                class="hidden"
+            >
+
+                <div id="frameLoading">
+
+                    <div class="loading-box">
+
+                        <div class="spinner"></div>
+
+                        <div>
+                            Loading site...
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="sub-header collapsed" onclick="toggleSub(this)">
-                    Classic
-                </div>
-                <div class="sub-content collapsed">
-                    <div class="site-btn" onclick='openBlank("mathster.com/games/tetris/")'>Tetris</div>
-                    <div class="site-btn" onclick='openBlank("offline-dino-game.firebaseapp.com")'>Dino Game</div>
-                    <div class="site-btn" onclick='openBlank("rbeesley.github.io/MicrosoftEdge-SURF/")'>Microsoft Surf</div>
-                </div>
+                <iframe
+                    id="siteFrame"
+                    allow="fullscreen; autoplay; clipboard-read; clipboard-write"
+                    referrerpolicy="no-referrer"
+                ></iframe>
 
-                <div class="sub-header collapsed" onclick="toggleSub(this)">
-                    Miscellaneous
-                </div>
-                <div class="sub-content collapsed">
-                    <div class="site-btn" onclick='openBlank("duck.tinyexams.com")'>Tiny Exams</div>
-                    <div class="site-btn" onclick='openBlank("beanethiii.github.io/70403")'>BeanethIII</div>
-                    <div class="site-btn" onclick='openBlank("ut10-battle.undertale.com")'>Undertale 10th Anniversary</div>
-                    <div class="site-btn" onclick='openBlank("trinket.io/python/fb8b43596e?outputOnly=true&runOption=run")'>Black Jack</div>
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- SETTINGS -->
+
+<div
+    id="settingsModal"
+    class="modal-backdrop hidden"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <h2>Settings</h2>
+
+            <button
+                class="modal-close"
+                onclick="closeSettings()"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="setting">
+
+                <label for="themeSetting">
+                    Theme
+                </label>
+
+                <select
+                    id="themeSetting"
+                    onchange="changeTheme(this.value)"
+                >
+                    <option value="dark">
+                        Dark
+                    </option>
+
+                    <option value="light">
+                        Light
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="setting">
+
+                <label for="accentSetting">
+                    Accent color
+                </label>
+
+                <input
+                    id="accentSetting"
+                    type="color"
+                    value="#7c5cff"
+                    onchange="changeAccent(this.value)"
+                >
+
+            </div>
+
+
+            <div class="setting">
+
+                <label for="compactSetting">
+                    Compact mode
+                </label>
+
+                <select
+                    id="compactSetting"
+                    onchange="changeCompact(this.value)"
+                >
+                    <option value="false">
+                        Off
+                    </option>
+
+                    <option value="true">
+                        On
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="setting">
+
+                <label>
+                    Add custom site
+                </label>
+
+                <input
+                    id="customName"
+                    placeholder="Site name"
+                    autocomplete="off"
+                >
+
+                <input
+                    id="customUrl"
+                    placeholder="https://example.com"
+                    autocomplete="off"
+                >
+
+                <select id="customCategory"></select>
+
+                <button
+                    class="primary"
+                    onclick="addCustomSite()"
+                >
+                    Add Site
+                </button>
+
+            </div>
+
+
+            <div class="setting">
+
+                <label>
+                    Data
+                </label>
+
+                <div class="action-row">
+
+                    <button
+                        class="secondary"
+                        onclick="exportData()"
+                    >
+                        Export
+                    </button>
+
+                    <button
+                        class="secondary"
+                        onclick="document.getElementById('importFile').click()"
+                    >
+                        Import
+                    </button>
+
+                    <input
+                        id="importFile"
+                        type="file"
+                        accept=".json"
+                        class="hidden"
+                        onchange="importData(event)"
+                    >
+
+                    <button
+                        class="danger"
+                        onclick="clearData()"
+                    >
+                        Reset
+                    </button>
+
                 </div>
 
             </div>
-        </section>
 
-        <section class="column">
-            <h2 class="category-header" onclick="toggleColumn(this)">
-                Utilities
-            </h2>
-            <div class="column-content">
-                
-                <div class="sub-header collapsed" onclick="toggleSub(this)">Calculators</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("desmos.com/calculator")'>Desmos</div>
-    <div class="site-btn" onclick='openBlank("calculator.net")'>Calculator</div>
-    <div class="site-btn" onclick='openBlank("geogebra.org/classic")'>GeoGebra</div>
-</div>
 
-<div class="sub-header collapsed" onclick="toggleSub(this)">Writing</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("editpad.org")'>EditPad (simple text)</div>
-    <div class="site-btn" onclick='openBlank("protectedtext.com")'>ProtectedText (encrypted)</div>
-    <div class="site-btn" onclick='openBlank("wordcounter.net")'>Word Counter (with other plagiarism tools and such)</div>
-</div>
+            <div class="setting">
 
-<div class="sub-header collapsed" onclick="toggleSub(this)">Time</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("time.is")'>Exact Time</div>
-    <div class="site-btn" onclick='openBlank("timer-tab.com")'>Countdown</div>
-    <div class="site-btn" onclick='openBlank("vclock.com")'>Stopwatch/Alarm</div>
-</div>
+                <label for="testUrl">
+                    Frameability tester
+                </label>
 
-<div class="sub-header collapsed" onclick="toggleSub(this)">Programming</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("jsfiddle.net")'>JSFiddle (test code)</div>
-    <div class="site-btn" onclick='openBlank("codepen.io")'>CodePen</div>
-    <div class="site-btn" onclick='openBlank("liveweave.com")'>Liveweave (HTML/CSS/JS)</div>
-    <div class="site-btn" onclick='openBlank("sqlfiddle.com")'>SQL Fiddle</div>
-</div>
+                <input
+                    id="testUrl"
+                    placeholder="https://example.com"
+                    autocomplete="off"
+                >
 
-<div class="sub-header collapsed" onclick="toggleSub(this)">En/Decryption</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("base64encode.org")'>Base64 Encoder</div>
-    <div class="site-btn" onclick='openBlank("uuidgenerator.net")'>UUID Generator</div>
-    <div class="site-btn" onclick='openBlank("jsonformatter.org")'>JSON Formatter</div>
-    <div class="site-btn" onclick='openBlank("random.org")'>Numbers/lists randomizer</div>
-</div>
+                <button
+                    class="primary"
+                    onclick="testCustomUrl()"
+                >
+                    Test Site
+                </button>
 
-<div class="sub-header collapsed" onclick="toggleSub(this)">Colors/Drawing</div>
-<div class="sub-content collapsed">
-    <div class="site-btn" onclick='openBlank("coolors.co")'>Coolors (color palettes)</div>
-    <div class="site-btn" onclick='openBlank("colorpicker.me")'>Color Picker</div>
-    <div class="site-btn" onclick='openBlank("excalidraw.com")'>Drawing</div>
-</div>
+                <div id="testResult"></div>
 
             </div>
-        </section>
+
+
+            <div class="setting">
+
+                <label>
+                    Keyboard shortcuts
+                </label>
+
+                <div class="status-message">
+
+                    Ctrl + L — Focus address bar<br>
+                    Alt + ← — Back<br>
+                    Alt + → — Forward<br>
+                    Ctrl + R — Reload<br>
+                    Ctrl + T — New tab<br>
+                    Ctrl + W — Close tab<br>
+                    Ctrl + Shift + F — Fullscreen<br>
+                    Escape — Exit fullscreen
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <script>
-function toggleColumn(header) {
-    const content = header.nextElementSibling;
-    header.classList.toggle('collapsed');
-    content.classList.toggle('collapsed');
-}
+</div>
 
-function toggleSub(subHeader) {
-    const content = subHeader.nextElementSibling;
-    subHeader.classList.toggle('collapsed');
-    content.classList.toggle('collapsed');
-}
 
-function openBlank(url) {
-    // If a button supplies a URL, use that.
-    // Otherwise, get the URL from the input.
-    if (!url) {
-        const urlInput = document.getElementById('siteInput');
-        url = urlInput.value.trim();
+<div id="toast"></div>
 
-        if (!url) return;
 
-        urlInput.value = '';
-    } else {
-        url = url.trim();
-    }
-
-    // Add https:// if necessary
-    if (!/^https?:\/\//i.test(url)) {
-        url = 'https://' + url;
-    }
-
-    // Open a new tab
-    const win = window.open('about:blank', '_blank');
-
-    if (!win) {
-        alert('Your browser blocked the new tab.');
-        return;
-    }
-
-    // Put the iframe in the new tab
-    win.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Google Search</title>
-            <style>
-                html, body {
-                    margin: 0;
-                    padding: 0;
-                    width: 100%;
-                    height: 100%;
-                    overflow: hidden;
-                    background: #000;
-                }
-
-                iframe {
-                    display: block;
-                    border: 0;
-                    width: 100%;
-                    height: 100%;
-                }
-            </style>
-        </head>
-        <body>
-            <iframe
-                src="${url}"
-                allowfullscreen>
-            </iframe>
-        </body>
-        </html>
-    `);
-
-    win.document.close();
-}
-
-document.getElementById('siteInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        openBlank();
-    }
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
